@@ -1,0 +1,345 @@
+@import '../SCSS/mixins.scss' ;
+@import '../SCSS/variables.scss' ;
+@import '../SCSS/functions.scss' ;
+
+* {
+    @include reset;
+}
+
+header{
+    @include header;
+}
+body{
+    background-color: $profile-bg;
+    @include fontstack;
+}
+
+// First Section Project Name User Details Starts Here
+.project-details-wrapper{
+    height: 83px;
+    width: auto;
+    margin:0px 145px;
+    display: flex;
+    align-items: center;
+    img{
+        height: 40px;
+        width: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+        
+    }
+    div{
+        margin:0px 15px;
+        display: flex;
+        flex-direction: column;
+        p{
+            font-weight: 700;
+            font-size: 16px;
+        }
+        h5{
+            font-weight: 400;
+            font-size: 14px;
+            color: $text-primary;
+            cursor: pointer;
+            a{
+                text-decoration: none;
+                color: $text-primary;
+            }
+            &:hover{
+                text-decoration: underline;
+            }
+        }  
+    }
+    ul{
+        font-weight: 400;
+        font-size: 14px;
+        margin-left: 30px;
+        color: $icon-clr;
+        cursor: pointer;
+        li:hover{
+            text-decoration: underline;
+        }
+    }
+}
+// First Section Project Name User Details Ends Here
+
+section{
+    height: max-content;
+    width: auto;
+    margin: 0px 145px 80px;
+    background-color: $gallery-cardbg;
+    // border: 1px solid $message-border;
+    display: flex;
+    flex-direction: column;
+    box-shadow: $shadow-lg;
+    // Project Images
+    .project-showcase-wrapper{
+        width: 100%;
+        height: max-content;
+        img{
+            object-fit: cover;
+            width: 100%;
+            margin: -3px 0px;
+        }
+    }
+    // Project Images Ends
+
+    // Project Comments, Follow, Tags Start Here
+    .project-adds-options{
+        margin: 92px 101px;
+        // background-color: turquoise;
+        width: auto;
+        height: 140vh;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(14, 1fr);
+        gap: 0px 10px;
+        .add-comments{
+            grid-row: 1 / 4;
+            grid-column: 1 /4;
+            @include projectgridBorder;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            .userdp-commentbox{
+                width: auto;
+                height: 60%;
+                display: flex;
+                img{
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    margin-right: 10px;
+                }
+                textarea{
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 6px;
+                    border: 1px solid $message-border;
+                    padding: 20px;
+                }
+            }
+            button{
+                margin-top: 20px;
+                margin-left: 70%;
+                height: 33px;
+                width: 131px;
+                padding: 8px;
+                border-radius: 20px;
+                border:1px solid $message-border;
+                background-color: $bgcolor;
+                cursor: pointer;
+                font-weight: 600;
+                font-size: 13px;
+                color: $text-primary;
+                &:hover{
+                    background-color: $project-text;
+                }
+            }
+        }
+
+
+
+
+        .user-details{
+            grid-row: 1 / 4;
+            grid-column: 4 /6;
+            @include projectgridBorder;
+            border-radius: 6px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            small{
+                text-transform:uppercase;
+                font-size: 11px;
+                color: $icon-clr;
+            }
+            .user{
+                display: flex;
+                padding: 10px 0px;
+                img{
+                    height: 40px;
+                    width: 40px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+                div{
+                    margin:0px 15px;
+                    display: flex;
+                    flex-direction: column;
+                    p{
+                        font-weight: 700;
+                        font-size: 16px;
+                        a{
+                            text-decoration: none;
+                            color: $text-primary;
+                        }
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                    h5{
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: $icon-clr;
+                        cursor: pointer;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                        i{
+                            margin-right: 8px;
+                            color: $icon-clr;
+                        }
+                    }  
+                }
+            }
+            button{
+                background-color: $add-clr;
+                padding: 10px;
+                border-radius:20px;
+                color: $profile-bg;
+                border: 1px solid transparent;
+                margin: 5px 0;
+                font-weight: 700;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            button.hire-button{
+                background-color: $profile-bg;
+                color: $add-clr;
+                border: 1px solid $project-plus;
+                cursor: pointer;
+            }
+        }
+
+
+
+
+        .comments-shows{
+            grid-row: 4 / 14;
+            grid-column: 1 /4;
+            @include projectgridBorder;
+            padding:25px;
+            display: flex;
+            flex-direction: column;
+            // height: max-content;
+            .user{
+                display: flex;
+                padding: 20px 0px;
+                img{
+                    height: 45px;
+                    width: 45px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+                div{
+                    margin:0px 15px;
+                    display: flex;
+                    flex-direction: column;
+                    h5{
+                        font-weight: 700;
+                        font-size: 16px;
+                        a{
+                            text-decoration: none;
+                            color: $text-primary;
+                        }
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                    p{
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: $icon-clr;
+                        cursor: pointer;
+                    }  
+                }
+            }
+        }
+
+        .project-tags-list{
+            grid-column: 4 /6;
+            grid-row: 6 / 10;
+            height: max-content;
+            @include projectgridBorder;
+            border-radius: 6px;
+            padding: 25px;
+            button{
+                padding:10px;
+                height: 36px;
+                border-radius: 20px;
+                margin: 10px 10px 10px 0px;
+                border: 1px solid $message-border;
+                cursor: pointer;
+                background-color: $profile-bg;
+                font-size: 14px;
+                font-weight: 600;
+                color: $text-primary;
+                &:hover{
+                    background-color: $project-box;
+                }
+            }
+        }
+    }
+}
+
+.side-box{
+    height: 362px;
+    width: 105px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 133px;
+    right: 40px;
+    div{
+        height: 90px;
+        width: 100%;
+        margin-bottom: 2px;
+        @include flexAllCnt;
+        flex-direction: column;
+        cursor: pointer;
+        small{
+            font-weight: 700;
+            font-size: 11px;
+            color: $project-text;
+        }
+    }
+    &-user-follow{
+        img{
+            height: 49px;
+            width: 49px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 5px; 
+        }
+    }
+    &-hire-us{
+        div{
+            border-radius: 50%;
+            height: 49px;
+            width: 49px;
+            border: 1px solid $message-border;
+        }
+    }
+    &-save{
+        div{
+            border-radius: 50%;
+            height: 49px;
+            width: 49px;
+            border: 1px solid $message-border;
+        }
+    }
+    &-appreciate{
+        div{
+            border-radius: 50%;
+            height: 49px;
+            width: 49px;
+            border: 1px solid $add-clr;
+            background-color: $add-clr;
+            .fas{
+                color: #fff;
+            }
+        }
+    }
+}

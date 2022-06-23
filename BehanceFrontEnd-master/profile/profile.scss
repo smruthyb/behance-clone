@@ -1,0 +1,503 @@
+@import '../SCSS/mixins.scss' ;
+@import '../SCSS/variables.scss' ;
+@import '../SCSS/functions.scss' ;
+
+* {
+    @include reset;
+}
+
+header{
+    @include header;
+}
+
+section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $profile-bg;
+    cursor: pointer;
+    position: relative;
+    .banner-position{
+        width: 100%;
+        height: 209px;
+        background-color: $banner-clr;
+        @include flexAllCnt;
+        flex-direction: column;
+        &:hover{
+            background-color: $banner-hover;
+        }
+        .fas{
+            color: $profile-bg;
+            margin-bottom: 10px
+        }
+        p{
+            @include fontstack;
+            font-size: 20px;
+            color: $bgcolor;
+            font-weight: 400;
+        }
+        small{
+            @include fontstack;
+            font-size: 14px;
+            color: $bgcolor;
+        }
+    }
+    .menu{
+        width: 100%;
+        height: 572px;
+        display: flex;
+        flex-direction: column;
+        &-options{
+            height: 63px;
+            width: 100%;
+            // background-color: aquamarine;
+            margin: 30px 0px 13px;
+            @include flexAllCnt;
+            button{
+                @include fontstack;
+                font-size: 14px;
+                color: $text-primary;
+                padding:5px 15px;
+                border-radius: 20px;
+                border:1px solid transparent;
+                margin:0px 4px;
+                background-color: transparent;
+                &:nth-child(1){
+                    background-color: $button-activebg;
+                    color: white;
+                }
+                &:nth-child(5),&:nth-child(6){
+                    color: $icon-clr;
+                }
+                &:nth-child(2):hover,&:nth-child(3):hover,&:nth-child(4):hover,&:nth-child(5):hover,&:nth-child(6):hover{
+                    background-color: $button-hover;
+                } 
+            }
+        }
+        .create-project{
+            background-color: $bgcolor;
+            height: 250px;
+            width:320px;
+            margin-left: 460px;
+            border: 1px dashed $project-box;
+            border-radius: 6px;
+            @include flexAllCnt;
+            flex-direction: column;
+            .add-project{
+                background-color: $project-plus;
+                height: 73px;
+                width: 73px;
+                border-radius: 50%;
+                @include flexAllCnt;
+                flex-direction: column;
+                .fas{
+                    color: $add-clr;
+                }
+            }
+            button{
+                @include fontstack;
+                font-size: 14px;
+                color: $text-primary;
+                padding:5px 15px;
+                border-radius: 20px;
+                border:1px solid $button-hover;
+                margin:20px 4px 10px;
+                background-color: transparent; 
+                &:hover {
+                    background-color: $button-hover;
+                }
+            }
+            p{
+                text-align: center;
+                @include fontstack;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 18px;
+                color: $project-text;
+                margin: 10px 20px 10px;
+            }
+        }
+    }
+    .profile-card {
+        height: 446px;
+        width: 362px;
+        background-color: $bgcolor;
+        position: absolute;
+        top: 60px;
+        left: 50px;
+        border-radius: 4px;
+        box-shadow: $shadow-sm;
+        @include fontstack;
+        @include flexAllCnt;
+        flex-direction: column;
+        .profile-pic{
+            height: 110px;
+            width: 110px;
+            position: relative;
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            &::after{
+                content:'+';
+                color: $bgcolor;
+                height: 22px;
+                text-align: center;
+                width: 22px;
+                // padding: 5px;
+                border-radius: 50%;
+                position: absolute;
+                bottom:5px;
+                right: 5px;
+                background-color: $add-clr;
+            }
+        }
+        h2{
+            font-size: 24px;
+            font-weight: 600;
+            color: $text-primary;
+            max-width: 300px;
+            margin: 20px 0px;
+        }
+        .user-location{
+            font-size: 14px;
+            font-weight: 400;
+            color: $icon-clr;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            .fas{
+                margin-right: 8px;
+            }
+        }
+        button{
+            width: 296px;
+            height: 40px;
+            text-align: center;
+            background-color: $add-clr;
+            border-radius: 20px;
+            border:1px solid $add-clr;
+            color: $bgcolor;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            .fas{
+                color: $bgcolor;
+                margin-right: 8px;
+            }
+            &:hover{
+                background-color: #013ecb;
+            }
+        }
+        p{
+            margin: 20px 0px;
+            font-size: 11px;
+            font-weight: 400;
+            color: $text-primary;
+        }
+    }
+}
+
+// Other User Profile Pages CSS Stylesheet
+
+.profile-container{
+    // height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // background-color: $profile-bg;
+    cursor: pointer;
+    position: relative;
+    .banner-position{
+        width: 100%;
+        height: 209px;
+        background-color: $banner-clr;
+        @include flexAllCnt;
+        flex-direction: column;
+        &:hover{
+            background-color: $banner-hover;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .menu-wrapper{
+        width: 100%;
+        height: 572px;
+        display: flex;
+        flex-direction: column;
+        .menu-options{
+            height: 63px;
+            width: 100%;
+            margin: 30px 0px 13px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 460px;
+            button{
+                @include fontstack;
+                font-size: 14px;
+                color: $text-primary;
+                padding:5px 15px;
+                border-radius: 20px;
+                border:1px solid transparent;
+                margin:0px 4px;
+                background-color: transparent;
+                &:nth-child(1){
+                    background-color: $button-activebg;
+                    color: white;
+                }
+                &:nth-child(2):hover,&:nth-child(3):hover{
+                    background-color: $button-hover;
+                } 
+            }
+        }
+        // Project Section Starts Here
+        .project-container {
+            height: max-content;
+            margin: 26px;
+            width: auto;
+            padding-bottom: 50px;
+            padding-left: 450px;
+            .project-wrapper {
+                height: max-content;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                
+                // Project Card 
+                .projects{
+                    // margin-top: 30px ;
+                    height: 256px;
+                    width: 322px;
+                    border-radius: 6px;
+                    overflow: hidden;
+                    margin-bottom: 40px;
+                    position: relative;
+                    
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        // visibility: hidden;
+                    }
+                    &-info{
+                        background-color: transparent;
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        padding: 7px 10px;
+                        // background-color: rgb(39, 77, 77);
+                        @include fontstack;
+                        color:#fff;
+                        position: absolute;
+                        bottom: 0;
+                        visibility: hidden;
+                        transition: opacity .2s, visibility .2s;
+                        
+                        h4{
+                            color:#fff;
+                            font-size: 16px;
+                            font-weight: 700;
+                            line-height: 21px;
+                            padding-bottom: 6px;
+                        }
+                        .user-stats{
+                            display: flex;
+                            justify-content: space-between;
+                            .user{
+                                p{
+                                    font-size: 13px;
+                                }
+                            }
+                            .photo-stats{
+                                display: flex;
+                                font-size: 12px;
+                                color: $icon-clr;
+                                padding-bottom: 6px;
+                                p{
+                                    margin-right: 10px;
+                                    color:#fff;
+                                    .fas{
+                                        padding-right: 4px;
+                                    }
+                                }
+                            }
+                        }   
+                    }
+                    &:hover .projects-info{
+                        visibility: visible;
+                        opacity: 1;
+                        box-shadow: inset 10px -40px 50px 30px rgba(0, 0, 0, 0.50);
+                    }
+                }
+            }
+        }
+        // Project Section Ends Here
+    }
+
+    // User Profile Card
+    .profile-card {
+        height: max-content;
+        width: 362px;
+        background-color: $bgcolor;
+        // background-color: rgb(213, 247, 136);
+        position: absolute;
+        top: 60px;
+        left: 50px;
+        border-radius: 4px;
+        box-shadow: $shadow-md;
+        padding: 33px;
+        @include fontstack;
+        @include flexAllCnt;
+        flex-direction: column;
+        .profile-pic{
+            height: 110px;
+            width: 110px;
+            position: relative;
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            &::after{
+                content:'+';
+                color: $bgcolor;
+                height: 22px;
+                text-align: center;
+                width: 22px;
+                // padding: 5px;
+                border-radius: 50%;
+                position: absolute;
+                bottom:5px;
+                right: 5px;
+                background-color: $add-clr;
+            }
+        }
+        h2{
+            font-size: 24px;
+            font-weight: 600;
+            color: $text-primary;
+            max-width: 300px;
+            margin: 20px 0px;
+        }
+        h4{
+            font-weight: 400;
+            font-size: 15px;
+            color: $icon-clr;
+        }
+        .user-location{
+            font-size: 14px;
+            font-weight: 400;
+            color: $icon-clr;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            .fas{
+                margin-right: 8px;
+            }
+        }
+        button{
+            width: 296px;
+            height: 40px;
+            text-align: center;
+            background-color: $add-clr;
+            border-radius: 20px;
+            border:1px solid $add-clr;
+            color: $bgcolor;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            .fas{
+                color: $bgcolor;
+                margin-right: 8px;
+            }
+            &:hover{
+                background-color: #013ecb;
+            }
+        }
+        .message{
+            background-color: $bgcolor;
+            color: $add-clr;
+            border:1px solid $btn-border;
+            .fas{
+                color: $add-clr;
+            }
+            &:hover{
+                background-color: $project-plus;
+            }
+        }
+        .profile-stats{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 30px;
+            div{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 2px;
+                height: 30px;
+                p{
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: $text-primary;
+                    padding-top: -5px;
+                }
+            }
+        }
+        .social-icons{
+            height: max-content;
+            width: 100%;
+            margin: 15px 0px;
+            .fab{
+                margin-right: 8px;
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+        }
+        .social-texts{
+            // height: max-content;
+            width: 100%;
+            margin: 8px 0px;
+            a{
+                text-decoration: none;
+            }
+            p{
+                margin: 7px 0;
+                font-size: 13px;
+                font-weight: 400;
+                color: $icon-clr;
+            }
+        }
+        .profile-contact{
+            width: 100%;
+            margin: 8px 0px;
+            color: $text-primary;
+            p{
+                font-weight: 700;
+                font-size: 11px;
+                margin: 7px 0;
+            }
+            small{
+                font-size: 13px;
+                font-weight: 400;
+            }
+        }
+        p{
+            margin: 30px 0px 2px;
+            font-size: 11px;
+            font-weight: 400;
+            color: $text-primary;
+        }
+    }
+}
